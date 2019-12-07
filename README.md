@@ -60,12 +60,6 @@ New message should be:
     * address `String` receiver number.
 
 
-* message `Object`
-    * text `String` message body. Longs messages will be splitted and
-        sent in multiple parts transparently.
-    * receiver `String` receiver number.
-    * encoding `String`. '16bit' or '7bit'. Use 7bit in case of English messages.
-
 callback `Fucntion`(err, references) is called when sending is done.
   * references `Array` contains reference ids for each part of sent message. (A message may take up to several parts)
 
