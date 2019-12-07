@@ -44,6 +44,22 @@ Send a message
 modem.sms(message, callback)
 ```
 
+After Replacing pdu.generate(message) with pdu.stringify(message) for new PDU.js we will have new object format for message. We don't need encoding here as it will be selected automaticy.
+
+Old message:
+* message `Object`
+    * text `String` message body. Longs messages will be splitted and
+        sent in multiple parts transparently.
+    * receiver `String` receiver number.
+    * encoding `String`. '16bit' or '7bit'. Use 7bit in case of English messages.
+
+New message should be:
+* message `Object`
+    * userData `String` message body. Longs messages will be splitted and
+        sent in multiple parts transparently.
+    * address `String` receiver number.
+
+
 * message `Object`
     * text `String` message body. Longs messages will be splitted and
         sent in multiple parts transparently.
